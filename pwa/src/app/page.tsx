@@ -51,7 +51,15 @@ export default function Dashboard() {
       const settingsRes = await fetch('/api/settings');
       const settingsData = await settingsRes.json();
       if (settingsData.success) {
-        setSettings(settingsData.settings);
+        // 如果是后台静默刷新，只同步机器人运行状态，防止覆盖用户正在输入的内容
+        if (showLoading) {
+          setSettings(settingsData.settings);
+        } else {
+          setSettings(prev => ({
+            ...prev,
+            robot_status: settingsData.settings.robot_status
+          }));
+        }
       }
     } catch (e) {
       console.error('拉取数据失败:', e);
