@@ -44,7 +44,7 @@ export default function Dashboard() {
       const jobsRes = await fetch('/api/jobs');
       const jobsData = await jobsRes.json();
       if (jobsData.success) {
-        setJobs(jobsData.jobs);
+        setJobs(jobsData.jobs || jobsData.data || []);
       }
 
       // 获取设置
@@ -115,10 +115,10 @@ export default function Dashboard() {
     setUpdatingJob(true);
     try {
       const res = await fetch('/api/jobs', {
-        method: 'POST',
+        method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          recordId: selectedJob.id,
+          id: selectedJob.id,
           status: editStatus,
           notes: editNotes
         })
