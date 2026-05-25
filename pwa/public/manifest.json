@@ -1,0 +1,20 @@
+{
+  "name": "AI产品经理投递助手",
+  "short_name": "AI投递",
+  "description": "Boss直聘投递记录与飞书表格数据管理中心",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "orientation": "portrait",
+  "scope": "/",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

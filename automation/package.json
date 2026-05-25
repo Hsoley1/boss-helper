@@ -1,0 +1,14 @@
+{
+  "name": "boss-automation",
+  "version": "1.0.0",
+  "description": "Boss Zhipin auto delivery and Feishu sync script",
+  "main": "boss_robot.js",
+  "type": "module",
+  "scripts": {
+    "start": "node boss_robot.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright": "^1.49.0"
+  }
+}
